@@ -10,7 +10,8 @@
        default="true"
        doc="Automatically launch Rviz."/>
   <arg name="rviz_config"
-       default="$(find wavemap_ros)/config/rviz/default.rviz"/>
+       default="$(find wavemap_ros)/config/rviz/default.rviz"
+       doc="replaces $(find wavemap_ros)/config/rviz/default.rviz"/>
 
   <!-- Dataset params -->
   <arg name="rosbag_path"

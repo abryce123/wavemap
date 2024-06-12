@@ -1,7 +1,8 @@
 #include "wavemap_ros/rosbag_processor.h"
 
 #include <rosgraph_msgs/Clock.h>
-#include <tf/tfMessage.h>
+//#include <tf/tfMessage.h>
+#include <tf2_msgs/TFMessage.h>
 #include <wavemap_ros_conversions/config_conversions.h>
 
 #include "wavemap_ros/input_handler/depth_image_input_handler.h"
@@ -63,8 +64,8 @@ int main(int argc, char** argv) {
   }
 
   // Republish TFs
-  rosbag_processor.addRepublisher<tf::tfMessage>("/tf", "/tf", nh, 10);
-  rosbag_processor.addRepublisher<tf::tfMessage>("/tf_static", "/tf_static", nh,
+  rosbag_processor.addRepublisher<tf2_msgs::TFMessage>("/tf", "/tf", nh, 10);
+  rosbag_processor.addRepublisher<tf2_msgs::TFMessage>("/tf_static", "/tf_static", nh,
                                                  10);
   if (rosbag_processor.bagsContainTopic("/clock")) {
     rosbag_processor.addRepublisher<rosgraph_msgs::Clock>("/clock", "/clock",

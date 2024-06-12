@@ -1,7 +1,7 @@
 <launch>
   <!-- Dataset params -->
   <arg name="only_first_rosbag"
-       default="false"
+       default="true"
        doc="If true, replay only the first the rosbag in the dataset. If false, replay everything."/>
 
   <!-- Rosbag paths -->
